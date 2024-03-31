@@ -6,18 +6,19 @@
       content = {
         type = "gpt";
         partitions = {
+          boot = {
+            name = "boot";
+            size = "1M";
+            type = "EF02";
+          };
           esp = {
-            label = "boot";
             name = "ESP";
-            size = "512M";
+            size = "500M";
             type = "EF00";
             content = {
               type = "filesystem";
               format = "vfat";
               mountpoint = "/boot";
-              mountOptions = [
-                "defaults"
-              ];
             };
           };
           swap = {
@@ -76,7 +77,6 @@
       };
     };
   };
-
   fileSystems."/persist".neededForBoot = true;
   fileSystems."/var/log".neededForBoot = true;
 }
