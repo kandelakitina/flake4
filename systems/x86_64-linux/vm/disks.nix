@@ -79,4 +79,17 @@
   };
   fileSystems."/persist".neededForBoot = true;
   fileSystems."/var/log".neededForBoot = true;
+
+  fileSystems."/" = {
+    device = "/dev/root_vg/root"; # Path to the logical volume
+    fsType = "btrfs"; # File system type
+    options = [ "subvol=root" "compress=zstd" "noatime" ]; # Mount options, including subvolume
+  };
+  swapDevices = [
+    {
+      device = "/dev/vda2"; # Path to the swap partition
+      priority = 0; # Optional: Swap priority
+    }
+  ];
+  
 }
