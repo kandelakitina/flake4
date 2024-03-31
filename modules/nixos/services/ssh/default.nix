@@ -16,11 +16,11 @@ in {
     services.openssh = {
       enable = true;
       ports = [22];
-      PermitRootLogin = "prohibit-password";
+      settings.PermitRootLogin = "prohibit-password";
     };
 
     users.users = let 
-        publicKey = ""; # Enter your ssh public key
+      publicKey = ""; # Enter your ssh public key
     in
     {
       root.openssh.authorizedKeys.keys = [
