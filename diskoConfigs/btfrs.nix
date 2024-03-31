@@ -42,36 +42,37 @@
         };
       };
     };
-  lvm_vg = {
-    root_vg = {
-      type = "lvm_vg";
-      lvs = {
-        root = {
-          size = "100%FREE";
-          content = {
-            type = "btrfs";
-            extraArgs = ["-f"];
+    lvm_vg = {
+      root_vg = {
+        type = "lvm_vg";
+        lvs = {
+          root = {
+            size = "100%FREE";
+            content = {
+              type = "btrfs";
+              extraArgs = ["-f"];
 
-            subvolumes = {
-              "/root" = {
-                mountpoint = "/";
-                mountOptions = ["subvol=root" "compress=zstd" "noatime"];
-              };
-              "/home" = {
-                mountpoint = "/home";
-                mountOptions = ["subvol=home" "compress=zstd" "noatime"];
-              };
-              "/nix" = {
-                mountpoint = "/nix";
-                mountOptions = ["subvol=nix" "compress=zstd" "noatime"];
-              };
-              "/persist" = {
-                mountpoint = "/persist";
-                mountOptions = ["subvol=persist" "compress=zstd" "noatime"];
-              };
-              "/log" = {
-                mountpoint = "/var/log";
-                mountOptions = ["subvol=log" "compress=zstd" "noatime"];
+              subvolumes = {
+                "/root" = {
+                  mountpoint = "/";
+                  mountOptions = ["subvol=root" "compress=zstd" "noatime"];
+                };
+                "/home" = {
+                  mountpoint = "/home";
+                  mountOptions = ["subvol=home" "compress=zstd" "noatime"];
+                };
+                "/nix" = {
+                  mountpoint = "/nix";
+                  mountOptions = ["subvol=nix" "compress=zstd" "noatime"];
+                };
+                "/persist" = {
+                  mountpoint = "/persist";
+                  mountOptions = ["subvol=persist" "compress=zstd" "noatime"];
+                };
+                "/log" = {
+                  mountpoint = "/var/log";
+                  mountOptions = ["subvol=log" "compress=zstd" "noatime"];
+                };
               };
             };
           };
