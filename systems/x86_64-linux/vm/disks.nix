@@ -47,7 +47,7 @@
             size = "100%FREE";
             content = {
               type = "btrfs";
-              extraArgs = ["-f"];
+              extraArgs = ["-L" "nixos" "-f"];
 
               subvolumes = {
                 "/root" = {
