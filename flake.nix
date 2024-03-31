@@ -23,8 +23,8 @@
       inherit inputs;
       src = ./.;
       snowfall = {
-        metadata = "dotfiles";
-        namespace = "dotfiles";
+        # metadata = "dotfiles";
+        namespace = "custom";
         meta = {
           name = "dotfiles";
           title = "Boticelli's NixOS dotfiles";
