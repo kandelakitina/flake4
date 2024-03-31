@@ -13,18 +13,6 @@
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
 
-  fileSystems."/" = {
-    device = "/dev/root_vg/root"; # Path to the logical volume
-    fsType = "btrfs"; # File system type
-    options = [ "subvol=root" "compress=zstd" "noatime" ]; # Mount options, including subvolume
-  };
-  swapDevices = [
-    {
-      device = "/dev/vda2"; # Path to the swap partition
-      priority = 0; # Optional: Swap priority
-    }
-  ];
-  
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
   # (the default) this is the recommended approach. When using systemd-networkd it's
   # still possible to use this option, but it's recommended to use it in conjunction

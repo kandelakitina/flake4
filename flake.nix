@@ -16,8 +16,7 @@
     # nix-darwin.url = "github:LnL7/nix-darwin";
     # nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
 
-    disko.url = "github:nix-community/disko";
-    
+    disko.url = "github:nix-community/disko";    
   };
 
 
@@ -38,14 +37,14 @@
         allowUnfree = true;
       };
 
-      # systems.modules.nixos = with inputs; [
-      #   home-manager.nixosModules.home-manager
-      #   disko.nixosModules.disko
-      #   lanzaboote.nixosModules.lanzaboote
-      #   impermanence.nixosModules.impermanence
-      #   sops-nix.nixosModules.sops
-      #   nix-ld.nixosModules.nix-ld
-      # ];
+      systems.modules.nixos = with inputs; [
+        # home-manager.nixosModules.home-manager
+        disko.nixosModules.disko
+        # lanzaboote.nixosModules.lanzaboote
+        # impermanence.nixosModules.impermanence
+        # sops-nix.nixosModules.sops
+        # nix-ld.nixosModules.nix-ld
+      ];
 
       # systems.hosts.thinkpad.modules = with inputs; [
       #   hardware.nixosModules.lenovo-thinkpad-x1-7th-gen
