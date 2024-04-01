@@ -12,24 +12,25 @@ with lib.custom; {
   ];
 
   config = {
-    sops.defaultSopsFile = ../../../../../secrets/secrets.yaml;
-    sops.defaultSopsFormat = "yaml";
+    # TODO: SOPS
+    # sops.defaultSopsFile = ../../../../../secrets/secrets.yaml;
+    # sops.defaultSopsFormat = "yaml";
 
-    sops.age.keyFile = "/home/${config.user.name}/.config/sops/age/keys.txt";
+    # sops.age.keyFile = "/home/${config.user.name}/.config/sops/age/keys.txt";
 
-    home.persist.directories = [
-      ".config/sops"
-    ];
+    # home.persist.directories = [
+    #   ".config/sops"
+    # ];
 
-    environment.systemPackages = with pkgs; [
-      (writeShellScriptBin "sops" ''
-        EDITOR=${config.environment.variables.EDITOR} ${pkgs.sops}/bin/sops $@
-      '')
-      age
-    ];
+    # environment.systemPackages = with pkgs; [
+    #   (writeShellScriptBin "sops" ''
+    #     EDITOR=${config.environment.variables.EDITOR} ${pkgs.sops}/bin/sops $@
+    #   '')
+    #   age
+    # ];
 
-    # List of defined secrets
-    sops.secrets."system/password" = {neededForUsers = true;};
-    sops.secrets."ngrok/terraria" = {};
+    # # List of defined secrets
+    # sops.secrets."system/password" = {neededForUsers = true;};
+    # sops.secrets."ngrok/terraria" = {};
   };
 }
