@@ -65,7 +65,6 @@ in {
         }".source =
           cfg.icon;
       };
-    };
       
       persist.directories = [
         "Documents"
@@ -75,6 +74,7 @@ in {
 
         "flake4"
       ];
+    };
 
     users.users.${cfg.name} =
       {
