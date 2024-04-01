@@ -20,7 +20,7 @@
   system.stateVersion = "22.11";
   # ======================== DO NOT CHANGE THIS ========================
 
-  system.impermanence.enable = true;
+  impermanence.enable = true;
 
   system.shell.shell = "fish";
 }
