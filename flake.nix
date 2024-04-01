@@ -26,6 +26,9 @@
     sops-nix.url = "github:Mic92/sops-nix";
     sops-nix.inputs.nixpkgs.follows = "nixpkgs";
 
+    nix-colors.url = "github:IogaMaster/nix-colors";
+    prism.url = "github:IogaMaster/prism";
+
   };
 
   outputs = inputs:
