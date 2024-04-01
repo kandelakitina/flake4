@@ -31,6 +31,7 @@
     };
 
     impermanence.url = "github:nix-community/impermanence";
+    persist-retro.url = "github:Geometer1729/persist-retro";
   };
 
   outputs = inputs:
@@ -48,13 +49,27 @@
 
       channels-config = {
         allowUnfree = true;
+        permittedInsecurePackages = [
+          "electron-24.8.6"
+        ];
       };
+      
+      overlays = with inputs; [
+        # neovim.overlays.x86_64-linux.neovim
+      ];
 
       systems.modules.nixos = with inputs; [
         # home-manager.nixosModules.home-manager
         disko.nixosModules.disko
         # lanzaboote.nixosModules.lanzaboote
+        
         impermanence.nixosModules.impermanence
+        persist-retro.nixosModules.persist-retro
+        {
+          # Required for impermanence
+          fileSystems."/persist".neededForBoot = true;
+        }
+
         # sops-nix.nixosModules.sops
         # nix-ld.nixosModules.nix-ld
       ];
