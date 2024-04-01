@@ -58,19 +58,19 @@
                 };
                 "/home" = {
                   mountpoint = "/home";
-                  mountOptions = ["subvol=home" "compress=zstd" "noatime"];
+                  mountOptions = ["subvol=home" "noatime"];
                 };
                 "/nix" = {
                   mountpoint = "/nix";
-                  mountOptions = ["subvol=nix" "compress=zstd" "noatime"];
+                  mountOptions = ["subvol=nix" "noatime"];
                 };
                 "/persist" = {
                   mountpoint = "/persist";
-                  mountOptions = ["subvol=persist" "compress=zstd" "noatime"];
+                  mountOptions = ["subvol=persist" "noatime"];
                 };
                 "/log" = {
                   mountpoint = "/var/log";
-                  mountOptions = ["subvol=log" "compress=zstd" "noatime"];
+                  mountOptions = ["subvol=log" "noatime"];
                 };
               };
             };

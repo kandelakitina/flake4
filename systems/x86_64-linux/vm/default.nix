@@ -1,5 +1,8 @@
 {pkgs, ...}: {
-  imports = [./hardware-configuration.nix];
+  imports = [
+    ./hardware-configuration.nix
+    (import ../../../diskoConfigs/btfrs.nix { device = "/dev/vda"; })
+  ];
 
   # Enable Bootloader
   system.boot.efi.enable = true;
