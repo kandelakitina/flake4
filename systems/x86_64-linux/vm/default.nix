@@ -20,5 +20,5 @@
   system.stateVersion = "22.11";
   # ======================== DO NOT CHANGE THIS ========================
 
-  impermanence.enable = true;
+  system.impermanence.enable = true;
 }
