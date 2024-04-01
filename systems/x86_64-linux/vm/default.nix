@@ -21,4 +21,6 @@
   # ======================== DO NOT CHANGE THIS ========================
 
   system.impermanence.enable = true;
+
+  shell = "fish";
 }

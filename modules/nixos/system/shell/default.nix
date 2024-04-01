@@ -39,8 +39,17 @@ in {
 
     home.programs.zoxide = {
       enable = true;
+      enableFishIntegration = true;
       enableNushellIntegration = true;
     };
+
+    home.persist.directories = [
+      ".local/share/zoxide"
+      ".cache/zoxide"
+      ".cache/starship"
+      ".config/nushell"
+      ".config/fish"
+    ];
 
     # Actual Shell Configurations
     home.programs.fish = mkIf (cfg.shell == "fish") {
@@ -69,11 +78,11 @@ in {
       envFile.text = "";
       extraConfig = ''
         $env.config = {
-        	show_banner: false,
+          show_banner: false,
         }
 
         def , [...packages] {
-            nix shell ($packages | each {|s| $"nixpkgs#($s)"})
+            nix shell ...($packages | each {|s| $"nixpkgs#($s)"})
         }
       '';
     };
