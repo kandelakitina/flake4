@@ -30,10 +30,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    impermanence = {
-      url = "github:nix-community/impermanence";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    impermanence.url = "github:nix-community/impermanence";
   };
 
   outputs = inputs:
@@ -57,7 +54,7 @@
         # home-manager.nixosModules.home-manager
         disko.nixosModules.disko
         # lanzaboote.nixosModules.lanzaboote
-        # impermanence.nixosModules.impermanence
+        impermanence.nixosModules.impermanence
         # sops-nix.nixosModules.sops
         # nix-ld.nixosModules.nix-ld
       ];
