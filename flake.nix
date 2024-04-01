@@ -7,7 +7,7 @@
 
     home-manager = {
       url = "github:nix-community/home-manager";
-      home-manager.inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     snowfall-lib = {
@@ -17,7 +17,7 @@
 
     nixos-generators = { 
       url = "github:nix-community/nixos-generators";
-      nixos-generators.inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     # nix-darwin = { 
