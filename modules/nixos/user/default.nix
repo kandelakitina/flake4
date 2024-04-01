@@ -66,6 +66,15 @@ in {
           cfg.icon;
       };
     };
+      
+      persist.directories = [
+        "Documents"
+        "Music"
+        "Pictures"
+        "dev"
+
+        "flake4"
+      ];
 
     users.users.${cfg.name} =
       {
@@ -79,5 +88,9 @@ in {
           ++ cfg.extraGroups;
       }
       // cfg.extraOptions;
+
+    # TODO: SOPS
+    # users.users.root.hashedPasswordFile = lib.mkForce config.sops.secrets."system/password".path;
+    # users.mutableUsers = false;
   };
 }
