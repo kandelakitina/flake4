@@ -1,8 +1,4 @@
-{
-  config,
-  pkgs,
-  ...
-}: {
+{...}: {
   imports = [./hardware-configuration.nix];
 
   # Enable Bootloader (EFI or BIOS)

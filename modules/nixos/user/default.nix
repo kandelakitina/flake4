@@ -82,6 +82,9 @@ in {
         inherit (cfg) name initialPassword;
         home = "/home/${cfg.name}";
         group = "users";
+    
+        # TODO: SOPS
+        # hashedPasswordFile = lib.mkForce config.sops.secrets."system/password".path;
 
         extraGroups =
           ["wheel" "audio" "sound" "video" "networkmanager" "input" "tty" "docker"]
