@@ -22,5 +22,5 @@
 
   impermanence.enable = true;
 
-  system.shell.shell = "fish";
+  # system.shell.shell = "fish";
 }
